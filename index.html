@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="description" content="Athena Demo">
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>CSB/Athena Demo</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://js.arcgis.com/4.12/esri/css/main.css">
+    <!-- <link
+      rel="stylesheet"
+      href="https://js.arcgis.com/4.12/esri/themes/light/main.css"
+    /> -->
+    <link rel="stylesheet" href="./css/app.css">
+
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
+    <script src="https://js.arcgis.com/4.12/"></script>
+    <script src="js/app.js"></script>
+</head>
+
+<body onload="init();">
+    <div class="wrapper">
+
+        <!-- start header -->
+        <div class="box header" id="titleDiv">
+            <a href="https://www.ncei.noaa.gov/" title="National Centers for Environmental Information, National Oceanic and Atmospheric Administration">
+              <img src="images/map-banner.png" alt="National Centers for Environmental Information, National Oceanic and Atmospheric Administration" height="50px" style="vertical-align:middle; padding:3px 5px; margin-right:100px";></a>
+          Athena Demo
+        </div>
+        <!-- end header -->
+
+        <!-- start sidebar -->
+        <div class="box sidebar">
+            <div class="input-group" style="padding: 15px;">
+                <button id="getDataButton" type="button" style='margin-left: 10px;' class="btn btn-primary">Get Data</button>
+                <button id="resetButton" type="button" style='margin-left: 10px;' class="btn btn-primary">Reset</button>
+            </div>
+            <div class="input-group" style="padding: 15px;">
+                    <div class="input-group" style="padding-top: 15px;">
+                            <div class="input-group-prepend" style="padding-right: 5px; display: inline-block">
+                                <label class="input-group-text swdi-select" for="platformSelect">Platform</label>
+                            </div>
+                            <select style="background-color: gray; " class="custom-select swdi-select" id="platformSelect">
+                                <!-- options added programatically on page load -->
+                            </select>
+                        </div>
+
+                        <div class="input-group" style="padding-top: 15px;">
+                        <div class="input-group-prepend" style="padding-right: 5px; display: inline-block">
+                            <label class="input-group-text swdi-select" for="startDate">Start Date</label>
+                        </div>
+                        <input type="text" size=10 id="startDate" placeholder="yyyy-mm-dd" style="background-color: grey;">
+                    </div>
+                    <div>
+                        <div class="input-group-prepend" style="padding-top: 10px; padding-right: 5px; display: inline-block">
+                                <label class="input-group-text swdi-select" for="endDate">End Date</label>
+                            </div>
+                            <input type="text" size=10 id="endDate" placeholder="yyyy-mm-dd" style="background-color: grey;">
+                    </div>
+                    <div>
+                      <div class="input-group-prepend" style="padding-top: 10px; padding-right: 5px; display: inline-block">
+                              <label class="input-group-text swdi-select" for="apiKey">API Key</label>
+                          </div>
+                          <input type="password" size=10 id="apiKey" placeholder="x-api-key" style="background-color: grey;">
+                  </div>
+              </div>
+    
+          <div id="messagePanel" class="well"></div>
+
+        </div> <!-- end sidebar -->
+
+        <div class="map" id="viewDiv"></div>
+
+        <div class="box footer" id="footerDiv">
+                <table class="footer" align="center">
+                        <tr valign="middle" align="center">
+                          <td>
+                            <a href="https://www.ncei.noaa.gov/privacy" title="NOAA's Privacy Policy">Privacy Policy</a> |
+                            <a href="https://www.noaa.gov/foia-freedom-of-information-act" title="Freedom of Information Act">Freedom Of Information Act</a> |
+                            <a href="https://www.cio.noaa.gov/services_programs/info_quality.html" title="Information Quality">Information Quality</a> |
+                            <a href="https://www.noaa.gov/disclaimer.html" title="Disclaimer">Disclaimer</a> |
+                            <a href="https://www.ncdc.noaa.gov/survey" title="Take Our Site Survey">Take Our Survey</a> |
+                            <a href="https://www.commerce.gov/" title="United States Department of Commerce">Department of Commerce</a> |
+                            <a href="https://www.noaa.gov/" title="NOAA">NOAA</a> |</font>
+                            <a href="https://www.nesdis.noaa.gov/" title="NESDIS">NESDIS</a> |
+                            <a href="mailto:ncei.info@noaa.gov" rel="nofollow">Contact Us</a>
+                          </td>
+                        </tr>
+                      </table>
+        
+        </div>
+    </div>
+    <div id="tooltip" role="tooltip" style="display:none;"></div>
+    
+ 
+  </body>
+
+</html>
