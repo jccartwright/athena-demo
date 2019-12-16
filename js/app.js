@@ -169,18 +169,18 @@ require([
             "edate": endDate
         };
 
-        var apiKey = document.getElementById('apiKey').value;
-        if (! apiKey) {
-            alert('You must specify an API Key to continue');
-            return;
-        }
+        // var apiKey = document.getElementById('apiKey').value;
+        // if (! apiKey) {
+        //     alert('You must specify an API Key to continue');
+        //     return;
+        // }
 
         esriRequest(url, {
             method: 'post',
             responseType: "json",
             headers: {
                 'Content-Type': 'application/json',
-                'x-api-key': apiKey
+                // 'x-api-key': apiKey
             },
             body: JSON.stringify(payload)
         }).then(function (response) {
